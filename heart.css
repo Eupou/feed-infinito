@@ -1,6 +1,5 @@
 .container-coracao {
   position: absolute;
-  display: flex;
   top: 50%;
   left: calc(50% - 50px);
   justify-content: center;
@@ -10,7 +9,9 @@
 }
 
 .coracao {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100px;
   width: 100px;
   z-index: 1000;
@@ -32,38 +33,18 @@
   0% {
     opacity: 1;
   }
-  80% {
+  70% {
     opacity: 1;
   }
 }
 
-.coracao__lado-direito {
+.coracao-grande__vermelho {
   opacity: 0;
-  position: absolute;
-  height: 90px;
-  width: 75px;
-  background-color: rgb(255, 0, 85);
-  z-index: 1000;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50px;
-  transform: rotate(60deg) translateX(40px);
-}
-
-.coracao__lado-esquerdo {
-  opacity: 0;
-  position: absolute;
-  height: 90px;
-  width: 75px;
-  background-color: rgb(255, 0, 85);
-  z-index: 10000;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50px;
-  transform: rotate(-60deg) translateX(-40px);
-}
-
-.coracao__lado-direito,
-.coracao__lado-esquerdo {
+  height: 80px;
+  width: 80px;
   animation: fadeout 0.5s;
+}
+
+.coracao-pequeno__vazio {
+  cursor: pointer;
 }
