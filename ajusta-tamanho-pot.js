@@ -20,5 +20,3 @@ updatePostArr();
 
 console.log(`Se você estiver avaliando a responsividade deste site, você precisara dar refresh na 
 página sempre que voce mudar o tamanho da width, porque eu também usei javascript para auxiliar na contrução da resposividade`);
-
-alert("Observações no console!");
