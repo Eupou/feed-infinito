@@ -1,4 +1,4 @@
-export const USER_PROFILE_PICTURE = "https://picsum.photos/80";
+const USER_PROFILE_PICTURE = "https://picsum.photos/80";
 const fakeDataBase = {
   likedImgs: [USER_PROFILE_PICTURE],
 };
@@ -6,7 +6,7 @@ const fakeDataBase = {
 let feed = document.getElementById("feed");
 let feedPosY = 0;
 let windowPosY = 0;
-
+const teste = "oii";
 /* 
  For the application to be able to get different images from the API,
  we are changing the index of the image we are getting 
@@ -55,6 +55,7 @@ function loadPost(profilePicture, profileName, postText, postImgContent) {
     e.addEventListener("dblclick", likeImg);
   });
 
+  // we want to refresh the hearts array
   updateArrSmallHeart();
 
   changeImg++;
@@ -113,6 +114,7 @@ function checkHeight() {
       loadPost();
     }
   }
+  updatePostArr();
 }
 
 function loadFirstPosts() {

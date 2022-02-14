@@ -20,7 +20,6 @@
 
   .post {
     width: 100%;
-    height: 570px;
     border-radius: 0;
     border-left: unset;
     border-right: unset;
@@ -36,10 +35,6 @@
 }
 
 @media (max-width: 375px) {
-  .post {
-    height: 580px;
-  }
-
   .post-input {
     width: 230px;
   }
@@ -53,7 +48,4 @@
 }
 
 @media (max-width: 316px) {
-  .post {
-    height: 600px;
-  }
 }
