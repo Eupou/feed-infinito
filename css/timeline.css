@@ -45,7 +45,6 @@ a {
 }
 
 .logo a:hover,
-.btn-inicio a:hover,
 .btn-img-curtidas a:hover {
   color: black;
 }

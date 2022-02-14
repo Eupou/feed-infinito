@@ -1,8 +1,5 @@
 @media (max-width: 425px) {
   .feed {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
     width: 100vw;
   }
 
@@ -45,5 +42,18 @@
 
   .post-input {
     width: 230px;
+  }
+}
+
+@media (max-width: 330px) {
+  .post-input {
+    width: 200px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 316px) {
+  .post {
+    height: 600px;
   }
 }
