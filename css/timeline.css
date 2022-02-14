@@ -8,9 +8,46 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(61, 61, 61);
+}
+
 .feed {
   margin: auto;
   width: 450px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10000000;
+  background-color: white;
+  height: 8vh;
+  box-shadow: rgba(0, 0, 0, 0.384) 5px 0 10px;
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+.logo {
+  margin-left: 15px;
+}
+
+.header-lado-direito {
+  display: flex;
+}
+
+.btn-img-curtidas {
+  margin-right: 15px;
+}
+
+.logo a:hover,
+.btn-inicio a:hover,
+.btn-img-curtidas a:hover {
+  color: black;
 }
 
 .new-post {
@@ -179,7 +216,7 @@ body {
   display: flex;
   align-items: center;
   height: 45px;
-  width: 100%;
+  width: 99%;
 }
 
 .container-coracao-pequeno {
