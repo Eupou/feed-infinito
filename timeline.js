@@ -132,6 +132,10 @@ function likeImg(post) {
       </div>
     </div>
     `;
+
+    setTimeout(() => {
+      postBigHeart.innerHTML = ``;
+    }, 400)
     
     
     let postSmallHeart = postHTML.querySelector(".coracao-pequeno__vazio");
