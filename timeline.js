@@ -12,12 +12,15 @@ let changeImg = 1;
 
 feed.innerHTML += `
 <div class="new-post" id="new-post">
-<img class="post-profile-picture" src="${USER_PROFILE_PICTURE}" alt="icone do perfil">
-<div class="post-input" id="post-input" onclick="toggleModal()" id="new-post-input">Começar uma nova publicação</div>
+  <img class="post-profile-picture" src="${USER_PROFILE_PICTURE}" alt="icone do perfil">
+  <div class="post-input" id="post-input" onclick="toggleModal()" id="new-post-input">Começar uma nova publicação</div>
 </div>
+<div id="container-new-post"></div>
 `;
 
-function loadPost(profilePicture, profileName, postText, postImgContent) {
+function loadPost(profilePicture, profileName, postText, postImgContent, isNewPost) {
+  let containerNewPost = document.getElementById("container-new-post")
+  
   if (profilePicture == null) {
     profilePicture = `https://picsum.photos/80?random=${changeImg}`;
     profileName = "Lorem";
@@ -25,8 +28,8 @@ function loadPost(profilePicture, profileName, postText, postImgContent) {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
     postImgContent = `https://picsum.photos/450/300?random=${changeImg}`;
   }
-
-  feed.innerHTML += `
+  if (isNewPost) {
+    containerNewPost.innerHTML += `
     <div class="post" style="position: relative;">
         <div class="profile-info" onselect="return false">
             <img class="post-profile-picture" src="${profilePicture}" alt="icone do perfil">
@@ -34,7 +37,7 @@ function loadPost(profilePicture, profileName, postText, postImgContent) {
         </div>
         <p class="post-text">${postText}</p>
         <img class="post-image" src="${postImgContent}"  alt="post-image">
-       
+      
         <div class="container-like">
         </div>
 
@@ -45,6 +48,27 @@ function loadPost(profilePicture, profileName, postText, postImgContent) {
         </div>
     </div>
         `;
+  } else {
+    feed.innerHTML += `
+        <div class="post" style="position: relative;">
+            <div class="profile-info" onselect="return false">
+                <img class="post-profile-picture" src="${profilePicture}" alt="icone do perfil">
+                <p class="profile-name">${profileName}</p>
+            </div>
+            <p class="post-text">${postText}</p>
+            <img class="post-image" src="${postImgContent}"  alt="post-image">
+          
+            <div class="container-like">
+            </div>
+
+            <div class="acoes">
+                <div class="container-coracao-pequeno" data-state="curtir">
+                    <svg class="coracao-pequeno__vazio" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M16.792 3.904A4.989 4.989 0 0121.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 014.708-5.218 4.21 4.21 0 013.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 013.679-1.938m0-2a6.04 6.04 0 00-4.797 2.127 6.052 6.052 0 00-4.787-2.127A6.985 6.985 0 00.5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 003.518 3.018 2 2 0 002.174 0 45.263 45.263 0 003.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 00-6.708-7.218z"></path></svg>
+                </div>
+            </div>
+        </div>
+            `;
+  }
 
   let postImg = document.querySelectorAll(".post-image");
 
@@ -88,7 +112,7 @@ function publishNewPost() {
   let postUrl = document.getElementById("post-url").value;
   let profileName = "Wesley";
 
-  loadPost(USER_PROFILE_PICTURE, profileName, postMessage, postUrl);
+  loadPost(USER_PROFILE_PICTURE, profileName, postMessage, postUrl, true);
 }
 
 window.addEventListener("scroll", () => {
