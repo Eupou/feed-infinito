@@ -1,4 +1,4 @@
-@media (max-width: 425px) {
+@media (max-width: 455px) {
   .feed {
     width: 100vw;
   }
@@ -45,7 +45,4 @@
     width: 200px;
     font-size: 14px;
   }
-}
-
-@media (max-width: 316px) {
 }
