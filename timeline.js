@@ -129,7 +129,6 @@ function checkHeight() {
       loadPost();
     }
   }
-  updatePostArr();
 }
 
 function loadFirstPosts() {
