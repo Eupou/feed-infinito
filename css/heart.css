@@ -48,3 +48,9 @@
 .coracao-pequeno__vazio {
   cursor: pointer;
 }
+
+.coracao-pequeno__cheio {
+  cursor: pointer;
+  color: #ed4956;
+  fill: #ed4956;
+}
